@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>About William Atkinson</title>
+        <meta name="description" content="This site is a brief autobiograpy and blog by and about William Atkinson.">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body>
+        <main class="About">
+            <section id="namePlate">
+                <img id="myIcon" src="images/me.jpg" alt="My beautiful face!">
+                <h1>About Me:  William Atkinson</h1>
+            </section>
+            <p>I am a freshman at the <a href="https://www.sc.edu/about/index.php">University of South Carolina</a> pursuing a degree in Computer Engineering.</p>
+            <p>Some of my interests include:</p>
+            <ul>
+                <li>Programming</li>
+                <li>Computer Graphics</li>
+                <li>Embedded Graphics</li>
+                <li>Manufacturing</li>
+                <li>Machining</li>
+                <li><a onClick="swapStyle()">Dark User Interfaces</a></li>
+            </ul>
+            <p>Some of my hobbies include:</p>
+            <ul>
+                <li>Programming</li>
+                <li>Gaming</li>
+                <li>3D Modeling</li>
+            </ul>
+
+        </main>
+    </body>
+    <script>
+        let style = 'light';
+        function swapStyle() {
+            if(style == 'light') {
+                document.body.style.color = '#FAFAFA'; 
+                document.body.style.backgroundColor = '#333531';
+                style = 'dark';
+            } else {
+                document.body.style.color = '#333531'; 
+                document.body.style.backgroundColor = '#FAFAFA';
+                style = 'light';
+            }
+        }
+    </script>
+</html>
