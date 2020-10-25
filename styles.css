@@ -8,7 +8,7 @@ body {
 }
 
 a {
-    color: #1856DC;
+    color: #458BFA;
     text-decoration: underline dotted;
     cursor: pointer;
 }
@@ -28,8 +28,7 @@ main {
 #namePlate h1 {
     color: #DB6A53;
     font-size: 3em;
-    margin-left: 1em;
-    vertical-align: middle;
+    margin: auto 1em auto;
 }
 
 #myIcon {
