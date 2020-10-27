@@ -5,6 +5,7 @@ body {
     display: block;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 14pt;
 }
 
 a {
@@ -14,7 +15,7 @@ a {
 }
 
 main {
-    max-width: 10in;
+    max-width: max-content;
     min-width: 600px;
     padding: 1in 0.5in;
     margin: auto;
@@ -28,7 +29,7 @@ main {
 #namePlate h1 {
     color: #DB6A53;
     font-size: 3em;
-    margin: auto 1em auto;
+    margin: auto 0.5em auto;
 }
 
 #myIcon {
