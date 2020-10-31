@@ -1,11 +1,15 @@
-body {
+html {
     margin: 0;
     color: #272727;
     background-color: #FAFAFA;
     display: block;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 14pt;
+    font-size: 18px;
+}
+
+body {
+    margin: 0;
 }
 
 a {
@@ -14,29 +18,42 @@ a {
     cursor: pointer;
 }
 
+a:focus, a:hover, a:active {
+    color: #6474D0;
+}
+
 main {
-    max-width: max-content;
-    min-width: 600px;
+    max-width: 50rem;
+    min-width: 33rem;
     padding: 1in 0.5in;
     margin: auto;
 }
 
-#namePlate {
+header {
     display: flex;
-    justify-items: left;
+}
+
+h2 {
+    color: #DB6A53;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+img {
+    width: 100%;
 }
 
 #namePlate h1 {
     color: #DB6A53;
     font-size: 3em;
-    margin: auto 0.5em auto;
+    margin: auto 1rem auto;
 }
 
 #myIcon {
-    width: 8em;
-    height: 8em;
+    width: 8rem;
+    height: 8rem;
     object-fit: cover;
     object-position: top;
     border: 2px solid #DB6A53;
-    border-radius: 4em;
+    border-radius: 4rem;
 }
