@@ -41,12 +41,14 @@ h2 {
 
 .col {
     display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
     width: 100%;
 }
 
 .col > * {
-    margin: 0 0.5rem;
-    width: 100%;
+    max-width: 24rem;
+    margin: 0.5rem;
 }
 
 #namePlate h1 {
