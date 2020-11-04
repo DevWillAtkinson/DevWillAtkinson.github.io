@@ -39,8 +39,14 @@ h2 {
     margin: 1rem 0;
 }
 
-img {
+.col {
+    display: flex;
+    justify-content: space-around;
     width: 100%;
+}
+
+.col > * {
+    margin: 0 0.5rem;
 }
 
 #namePlate h1 {
@@ -52,6 +58,7 @@ img {
 #myIcon {
     width: 8rem;
     height: 8rem;
+    min-width: 0;
     object-fit: cover;
     object-position: top;
     border: 2px solid #DB6A53;
