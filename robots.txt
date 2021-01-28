@@ -1,0 +1,5 @@
+# Prevent bots from indexing my visage
+User-agent: *
+Disallow: /images/*
+
+Sitemap: http://www.devwillatkinson.com/sitemap.xml
