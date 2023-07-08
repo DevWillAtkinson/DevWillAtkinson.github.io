@@ -23,20 +23,24 @@
                 Disc: <input id="disc" type="text">
                 Price: <input id="price" type="text">
             </span>
-            <button type="button" onclick="addLabel()">+</button>
-            <button type="button" onclick="removeLabel()">-</button>
+            <button type="button" onclick="addLabel()">Add</button>
+            <button type="button" onclick="removeLabel()">Remove Last</button>
         </div>
         <script>
             
             const wrapper = document.querySelector(".wrapper");
             const template = document.querySelector("#label");
+            const disc = document.querySelector("#disc");
+            const sku = document.querySelector("#sku");
+            const price = document.querySelector("#price");
 
             function addLabel() {
                 let newLabel = template.content.cloneNode(true);
-                newLabel.querySelector(".discription").innerHTML = document.querySelector("#disc").value;
-                newLabel.querySelector(".barcode").innerHTML = document.querySelector("#sku").value;
-                newLabel.querySelector(".price").innerHTML = document.querySelector("#price").value;
+                newLabel.querySelector(".discription").innerHTML = disc.value;
+                newLabel.querySelector(".barcode").innerHTML = sku.value;
+                newLabel.querySelector(".price").innerHTML = price.value;
                 wrapper.appendChild(newLabel);
+
             }
 
             function removeLabel() {
