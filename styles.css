@@ -1,68 +1,68 @@
-html {
-    margin: 0;
-    color: #272727;
-    background-color: #FAFAFA;
-    display: block;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
+@page {
+    size: 8.5in 11in;
+    margin: 0.0in;
+}
+
+@media print {
+    body {
+        width: 8.5in;
+        height: 11in;
+    }
+    .controls {
+        display: none;
+    }
 }
 
 body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14pt;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+}
+
+
+.controls {
+    position: fixed;
+    bottom: 0.1in;
+    right: 0.1in;
+    
+}
+
+.wrapper {
     margin: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 2in);
+    gap: 0px;
+    grid-auto-rows: 1in;
 }
 
-a {
-    color: #458BFA;
-    text-decoration: underline dotted;
-    cursor: pointer;
+.label {
+    contain: layout;
 }
 
-a:focus, a:hover, a:active {
-    color: #6474D0;
+.label * {
+    position: fixed;
 }
 
-main {
-    max-width: 50rem;
-    min-width: 33rem;
-    padding: 1in 0.5in;
-    margin: auto;
+.discription {
+    font-weight: bolder;
+    top: 0.1in;
+    left: 0.1in;
 }
 
-header {
-    display: flex;
+.barcode {
+    bottom: 0.1in;
+    left: 0.1in;
 }
 
-h2 {
-    color: #DB6A53;
-    font-size: 1.5rem;
-    margin: 1rem 0;
-}
-
-.col {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    width: 100%;
-}
-
-.col > * {
-    max-width: 24rem;
-    margin: 0.5rem;
-}
-
-#namePlate h1 {
-    color: #DB6A53;
-    font-size: 3em;
-    margin: auto 1rem auto;
-}
-
-#myIcon {
-    width: 8rem;
-    height: 8rem;
-    min-width: 0;
-    object-fit: cover;
-    object-position: top;
-    border: 2px solid #DB6A53;
-    border-radius: 4rem;
+.price {
+    font-weight: bolder;
+    bottom: 0.1in;
+    right: 0.1in;
 }

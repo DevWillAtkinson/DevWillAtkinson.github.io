@@ -1,99 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
-        <title>About William Atkinson: Programmer, Artist, Outdoorsman</title>
-        <meta name="description" content="William Atkinson's autobiographical blog.  Learn more about his projects, thoughts, and more!">
+        <title>Wide Label Template</title>
+        <meta name="description" content="Modern solutions">
+        <link href="styles.css" rel="stylesheet" />
         
-        <link rel="stylesheet" type="text/css" href="styles.css">
     </head>
     <body>
-        <main class="About">
-            <header id="namePlate">
-                <img id="myIcon" src="images/me.jpg" alt="My beautiful face!">
-                <h1>About Me:  William Atkinson</h1>
-            </header>
-            <section id="about">
-                <p>I am a freshman at the <a target="_blank" href="https://www.sc.edu/about/index.php">University of South Carolina</a> pursuing a degree in Computer Engineering.</p>
-                <p>Some of my interests include:</p>
-                <ul>
-                    <li>Programming</li>
-                    <li>Computer Graphics</li>
-                    <li>Embedded Graphics</li>
-                    <li>Manufacturing</li>
-                    <li>Machining</li>
-                    <li><a target="_self" onClick="swapStyle()">Dark User Interfaces</a></li>
-                </ul>
-                <p>Some of my hobbies include:</p>
-                <ul>
-                    <li>Programming</li>
-                    <li>Gaming</li>
-                    <li>3D Modeling</li>
-                </ul>
-            </section>
-            <section id="contact">
-                <p>Find me on social media with @DevWillAtkinson: </p>
-                <ul>
-                    <li><a target="_blank" href="https://www.instagram.com/devwillatkinson/">Instagram</a></li>
-                    <li><a target="_blank" href="https://twitter.com/DevWillAtkinson">Twitter</a></li>
-                    <li><a target="_blank" href="https://github.com/DevWillAtkinson">GitHub</a></li>
-                </ul>
-            </section>
-            <section id="thoughts">
-                <p>We all have thoughts &mdash; see some of mine here:</p>
-                <ul>
-                    <li><a target="_top" href="#art">Art</a></li>
-                    <li><a target="_blank" href="https://open.spotify.com/user/irregularmaterialist">My Spotify Albums</a></li>
-                    <li><a target="_top" href="#writing">Writing</a></li>
-                    <li><a target="_top" href="#gameDev">Game Development</a></li>
-                    <li><a target="_top" href="#programming">Computer Science</a></li>
-                </ul>
-            </section>
-            <section id="art">
-                <h2>Art</h2>
-                <p>I'm still practicing my traditional art skills, but for now I have a few computer based art projects displaying various programming skills and concepts.</p>
-                <div class="col">
-                    <img src="images/DiagonalFractal.png">
-                    <img src="images/SquareFractal.png">
-                </div>
-                <p>The above artworks were produced by a program I wrote to render L-systems.  L-Systems are a technology used to model plant growth and to create recursive, self-similar structures.</p>
-                <p>Learn how they work at the <a target="_blank" href="https://github.com/DevWillAtkinson/RustLSystem">GitHub Repo!</a></p>
-            </section>
-            <section id="writing">
-                <h2>Writing</h2> 
-                <p>I don't have a lot of writing of my own yet.  Here is a list of some of my favorite books, in no particular order:</p>
-                <ul>
-                    <li><u>The Time Machine</u> - H.G. Wells</li>
-                    <li><u>Little Brother</u> - Cory Doctorow</li>
-                    <li><u>Hatchet</u> - Gary Paulsen</li>
-                    <li><u>Walden</u> - Henry David Thoreau</li>
-                    <li><u>The Catcher in the Rye</u> - J. D. Stalinger</li>
-                </ul>
-            </section>
-            <section id="gameDev">
-                <h2>Game Development</h2>
-                <p>I used to be deeper into game development, but then I began to feel the technologies of the space were bloated.  Many of my projects have been framework based as I tended to avoid large engines due to the overhead and lack of need for the features they provide.</p>
-                <p>Now I am more interested in de-bloating software and making small games with simple graphics frameworks that set up a simple way to send images to screens.  Even now, I feel that sending images to screens can be more work than necessary.  </p>
-                <p>When you're done setting up a device context, you're often a hundred or so lines of code in.  I'm hoping there can be a better way and am currently researching alternative graphics technologies.</p>
-            </section>
-            <section id="programming">
-                <h2>Computer Science and Programming Concepts</h2>
-                <p>I am currently learning new languages to see what I like best.  Currently, Rust is my favorite.  It's developer-friendly features and easy-to-use dependency manager make it a very easy language to pick up and develop for.</p>
-                <p>I am also currently exploring technologies such as Tableau and D3.js for data visualization.</p>
-                <!-- <p><a target="_blank" href="https://wla1scedu.github.io/">View some of the work I did for CSCE 190.</a></p> -->
-            </section>
-        </main>
+        <template id="label">
+            <div class="label">
+                <span class="discription">Sample Description</span>
+                <span class="barcode">1000000</span>
+                <span class="price">$59.99</span>
+            </div>
+        </template>
+        <div class="wrapper">
+            
+        </div>
+        <div class="controls" style="font-size: 24pt;">
+            <span>
+                SKU: <input id="sku" type="text">
+                Disc: <input id="disc" type="text">
+                Price: <input id="price" type="text">
+            </span>
+            <button type="button" onclick="addLabel()">+</button>
+            <button type="button" onclick="removeLabel()">-</button>
+        </div>
         <script>
-            let style = 'light';
-            function swapStyle() {
-                if(style == 'light') {
-                    document.body.style.color = '#FAFAFA'; 
-                    document.body.style.backgroundColor = '#272727';
-                    style = 'dark';
-                } else {
-                    document.body.style.color = '#272727'; 
-                    document.body.style.backgroundColor = '#FAFAFA';
-                    style = 'light';
-                }
+            
+            const wrapper = document.querySelector(".wrapper");
+            const template = document.querySelector("#label");
+
+            function addLabel() {
+                let newLabel = template.content.cloneNode(true);
+                newLabel.querySelector(".discription").innerHTML = document.querySelector("#disc").value;
+                newLabel.querySelector(".barcode").innerHTML = document.querySelector("#sku").value;
+                newLabel.querySelector(".price").innerHTML = document.querySelector("#price").value;
+                wrapper.appendChild(newLabel);
+            }
+
+            function removeLabel() {
+                console.log(wrapper.lastElementChild)
+                wrapper.removeChild(wrapper.lastElementChild);
             }
         </script>
     </body>
